@@ -94,9 +94,9 @@ Do not use the vertical bar (pipe) in your pattern.
 const matchMonth = (input) => {
   // in progress...
 
-  if a == October, Oct, october, oct => {
+  // if a == October, Oct, october, oct => {
     
-  }
+  // }
 };
 
 /* ------------------------------------------------------------------------------------------------
