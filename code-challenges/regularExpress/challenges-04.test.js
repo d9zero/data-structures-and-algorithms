@@ -71,7 +71,7 @@ const citiesAtoJ = (arr) => {
   // Solution code here...
   let newArr = [];
   let regex = /^[a-jA-J]/;
-  arr.foEach(value =>) {
+  arr.foEach(value => {
     if (regex.test(value)) {
       newArr.push(value);
     }
@@ -94,9 +94,9 @@ Do not use the vertical bar (pipe) in your pattern.
 const matchMonth = (input) => {
   // in progress...
 
-  if a == October, Oct, october, oct => {
+  // if a == October, Oct, october, oct => {
     
-  }
+  // }
 };
 
 /* ------------------------------------------------------------------------------------------------
