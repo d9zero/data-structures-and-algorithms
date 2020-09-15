@@ -2,6 +2,7 @@
 
 // to learn more about the cheerio library and what it is doing, look at their documentation: https://www.npmjs.com/package/cheerio
 const cheerio = require('cheerio');
+const { get } = require('http');
 const Mustache = require('mustache');
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,6 +72,16 @@ let $ = createSnippetWithJQuery(`
 
 const templatingWithMustache = () => {
   // Solution code here...
+  const template = $('#template').html();
+  let name = Mustache.render(template, characters.name);
+  let spouse = Mustache.render(template, characters.spouse)
+  let childern = Mustache.render(template, characters.children);
+  let house = Mustache.render(tempalte, characters.house);
+  
+  $('h2').html(name);
+  $('h3').html(spouse);
+  $('.').html(childern);
+  $('p').html(house);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +109,10 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
-  return houses;
+  arr.forEach(name =>)
+  return arr.name;
+
+
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -115,7 +129,14 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  arr.forEach(value => {
+    if (character.name === character && character.children.length > 0) {
+      something = false;
+    }
+  })
 
+  console.log(thing);
+  return something;
 };
 
 /* ------------------------------------------------------------------------------------------------
