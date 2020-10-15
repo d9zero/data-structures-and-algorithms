@@ -107,10 +107,17 @@ const alphabetizeBetter = (arr) => {
     alphaString.sort ((a, b) => {
       a = a.alphabetize;
       b = b.alphabetize;
+      if(a > b){
+        return 1;
+      } else if (a < b){
+        return -1;
+      } else {
+        return 0;
+      }
     });
-    // work in progress...
+    return arr;
+  };
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
@@ -126,6 +133,19 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  arr.sort((a,b) =>{
+    a = a.price;
+    b = b.price;
+    if(a > b){
+      return 1;
+    } else if (a < b){
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
