@@ -72,16 +72,26 @@ let $ = createSnippetWithJQuery(`
 
 const templatingWithMustache = () => {
   // Solution code here...
-  const template = $('#template').html();
-  let name = Mustache.render(template, characters.name);
-  let spouse = Mustache.render(template, characters.spouse)
-  let childern = Mustache.render(template, characters.children);
-  let house = Mustache.render(tempalte, characters.house);
+  // const template = $('#template').html();
+  // let name = Mustache.render(template, characters.name);
+  // let spouse = Mustache.render(template, characters.spouse)
+  // let childern = Mustache.render(template, characters.children);
+  // let house = Mustache.render(tempalte, characters.house);
   
-  $('h2').html(name);
-  $('h3').html(spouse);
-  $('.').html(childern);
-  $('p').html(house);
+  // $('h2').html(name);
+  // $('h3').html(spouse);
+  // $('.').html(childern);
+  // $('p').html(house);
+
+  let arr = [];
+  let template = $('#template').html();
+  characters.forEach(place => {
+    let html = Mustache.render(template, place);
+    arr.push(html);
+  });
+
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,6 +108,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,7 +120,7 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
-  getHouses.keys(name).forEach(entry => {
+  characters.forEach(entry => {
     console.log(entry);
   })
   return arr.name;
@@ -131,13 +142,12 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let something = false;
   arr.forEach(value => {
-    if (character.name === character && character.children.length > 0) {
-      something = false;
-    }
-  })
-
-  console.log(thing);
+    if (character.name === character && character.children) 
+      something = true;
+    
+  });
   return something;
 };
 
