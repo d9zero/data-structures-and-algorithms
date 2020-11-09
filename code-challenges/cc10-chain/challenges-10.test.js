@@ -56,9 +56,8 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
-  let totalCount = totalSum.map(value() => {
-    
-  }
+  let totalCount = input.reduce((acc, val) => acc + val.reduce((acc2, val2) => acc2 + val2, 0), 0);
+  return totalCount;
 
 };
 
@@ -76,6 +75,9 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  return input.map((subArray) => {
+    return subArray.filter(item => item % 5 === 0 && typeof item === 'number').map(goodItems => Math.pow(2,goodItems));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
