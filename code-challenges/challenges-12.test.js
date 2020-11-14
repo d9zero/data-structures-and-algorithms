@@ -8,14 +8,15 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 
 const maximumValue = (arr) => {
-  let whatIsMV = arr.reduce((acc, val) => {
-    if(val < acc){
-      acc =val;
+  return arr.reduce((acc, val) => {
+    if (val > acc) {
+      acc = val;
+    } else {
+      maxNow = val;
     }
     return acc;
 
-  });
-  return whatIsMV;
+  },0);
 
 };
 
