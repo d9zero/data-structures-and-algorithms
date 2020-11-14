@@ -71,7 +71,7 @@ const citiesAtoJ = (arr) => {
   // Solution code here...
   let newArr = [];
   let regex = /^[a-jA-J]/;
-  arr.foEach(value => {
+  arr.forEach(value => {
     if (regex.test(value)) {
       newArr.push(value);
     }
